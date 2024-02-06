@@ -1,0 +1,21 @@
+<html>
+
+<body>
+
+<h3>Vérifier le stock de votre produit</h3>
+
+	<form id="stockCheckForm" action="/ssrf/post" method="POST">
+		<select name="stockApi">
+			<option value="http://192.168.0.1:8080/product/stock/check?productId=3&amp;storeId=1">London</option>
+			<option value="http://192.168.0.1:8080/product/stock/check?productId=3&amp;storeId=2">Paris</option>
+			<option value="http://192.168.0.1:8080/product/stock/check?productId=3&amp;storeId=3">Milan</option>
+		</select>
+		<button type="submit" class="button">Check stock</button>
+	</form>
+	
+	<div th:if="${api}">
+		Résults from <span th:text="${api}">API</span>
+	</div>
+</body>
+
+</html>

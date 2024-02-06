@@ -1,0 +1,33 @@
+<html>
+
+
+
+<body>
+
+	<h1>No results for <span th:utext="${q}">Query</span> </h1>
+
+	<div id="sink"></div>
+
+	<script>
+
+
+		const hash = decodeURIComponent(document.location.hash);
+		const funds = [];
+		const nMatches = 0;
+		/*
+		DOM-Based XSS
+		|
+		* Write the number of matches found, plus append the hash
+		* value to the DOM to improve the user experience.
+		*/
+		console.log('hash is ' + decodeURIComponent(hash) )
+		if (hash) {
+			var div = document.getElementById('sink');
+			console.log('div is ' + div)
+			div.innerHTML = nMatches + ' matches found for ' + hash
+			// document.write(nMatches + ' matches found for ' + hash);
+		}
+	</script>
+</body>
+
+</html>
